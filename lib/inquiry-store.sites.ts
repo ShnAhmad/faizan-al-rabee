@@ -1,3 +1,0 @@
-import {env} from 'cloudflare:workers';
-import type {Inquiry} from './inquiry-schema';
-export async function recordInquiry(data:Inquiry,reference:string){if(!env.DB)throw new Error('Inquiry storage unavailable');await env.DB.prepare('INSERT OR IGNORE INTO inquiries (id, reference, payload, created_at) VALUES (?, ?, ?, ?)').bind(data.submissionId,reference,JSON.stringify(data),Date.now()).run();const row=await env.DB.prepare('SELECT reference FROM inquiries WHERE id = ?').bind(data.submissionId).first<{reference:string}>();if(!row)throw new Error('Inquiry could not be recorded');return row.reference}

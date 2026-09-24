@@ -1,3 +1,3 @@
 import type {Inquiry} from './inquiry-schema';
-// Next.js/Vercel adapter. The Sites build aliases this module to its D1 adapter.
+// Deliver validated enquiries to your configured server-side receiver.
 export async function recordInquiry(data:Inquiry,reference:string){const endpoint=process.env.INQUIRY_WEBHOOK_URL;if(!endpoint)throw new Error('Inquiry delivery is not configured');const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json',...(process.env.INQUIRY_WEBHOOK_TOKEN?{Authorization:`Bearer ${process.env.INQUIRY_WEBHOOK_TOKEN}`}:{})},body:JSON.stringify({reference,...data}),signal:AbortSignal.timeout(15000)});if(!response.ok)throw new Error('Inquiry destination unavailable');return reference}

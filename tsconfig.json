@@ -25,14 +25,10 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "far-inquiry-store": [
-        "./lib/inquiry-store.ts"
       ]
     },
     "types": [
-      "node",
-      "@cloudflare/workers-types"
+      "node"
     ]
   },
   "include": [
@@ -44,7 +40,6 @@
     "**/*.mts"
   ],
   "exclude": [
-    "node_modules",
-    "examples"
+    "node_modules"
   ]
 }
