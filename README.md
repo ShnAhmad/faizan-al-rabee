@@ -10,8 +10,8 @@ Use Node 22.13+ and the package manager version in package.json.
 
 ```sh
 pnpm install
-pnpm dev                  # Sites runtime
-pnpm build                # Sites production build
+pnpm dev                  # Standard Next.js development
+pnpm build                # Standard Next.js production build
 pnpm dev:vercel           # Standard Next.js development
 pnpm build:vercel         # Standard Next.js production build
 ```
@@ -44,7 +44,7 @@ To add a product, use an existing category ID, a unique `far-` ID and unique slu
 Product photos were extracted from the supplied food workbook. Three generated editorial images illustrate trading activities; they are not verified company facilities. Replace files in `public/images/` with approved company photography as available. The Saudi outline uses public-domain Natural Earth country geometry. Keep image alt text, dimensions and licensing accurate.
 
 ## Before commercial launch
-Confirm the historical profile's phone, email and office address in `lib/company.ts`. Approve Arabic copy, product classification, brand and pack details, privacy terms and retention procedures. Client references are explicitly historical; no current contract, certification or authorized distributorship is asserted. Replace the typographic FAR identity when the final logo is selected. Assign staff access to stored enquiries or connect an approved notification workflow. Review abuse protection for public traffic before expanding access.
+Confirm the historical profile's phone, email and office address in `lib/company.ts`. Approve Arabic copy, product classification, brand and pack details, privacy terms and retention procedures. Client references are explicitly historical; no current contract, certification or authorized distributorship is asserted. The supplied company logo is used in the header and footer. Assign staff access to stored enquiries or connect an approved notification workflow. Review abuse protection for public traffic before expanding access.
 
 ## Validation
 TypeScript validation completed. Further build/browser results are recorded in `QA.md`. SEO includes localized canonical/hreflang tags, organization structured data, sitemap, robots and favicon.
