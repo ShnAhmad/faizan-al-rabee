@@ -1,0 +1,12 @@
+{
+  "sourceRows": 1193,
+  "products": 1165,
+  "exactDuplicatesMerged": 28,
+  "productImages": 158,
+  "missingBrand": 745,
+  "notes": [
+    "Categories are editable keyword mappings, not source-certified taxonomy.",
+    "Unknown brands remain empty. Product names retained in source language for accurate enquiries.",
+    "Source workbooks are retained for audit and reimport."
+  ]
+}

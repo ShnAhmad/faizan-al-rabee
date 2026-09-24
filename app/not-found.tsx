@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function NotFound(){return <div className="wrap section"><div className="eyebrow">404</div><h1>Page not found.</h1><p style={{marginTop:25}}>The page may have moved. Explore our catalogue or return home.</p><div className="actions"><Link className="btn" href="/en">Home</Link><Link className="btn secondary" href="/en/products">Product catalogue</Link></div></div>}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "oils",
+    "name": "Cooking oils",
+    "ar": "زيوت الطهي",
+    "type": "Food",
+    "count": 31,
+    "image": "/products/food-3.jpeg"
+  },
+  {
+    "id": "spices",
+    "name": "Spices & seasonings",
+    "ar": "التوابل والبهارات",
+    "type": "Food",
+    "count": 65,
+    "image": "/products/food-19.jpeg"
+  },
+  {
+    "id": "grains",
+    "name": "Rice, pasta & dry goods",
+    "ar": "الأرز والمعكرونة والمواد الجافة",
+    "type": "Food",
+    "count": 85,
+    "image": "/products/food-37.jpeg"
+  },
+  {
+    "id": "tea-coffee",
+    "name": "Tea & coffee",
+    "ar": "الشاي والقهوة",
+    "type": "Food",
+    "count": 68,
+    "image": "/products/food-53.jpeg"
+  },
+  {
+    "id": "dairy",
+    "name": "Dairy, cheese & butter",
+    "ar": "الألبان والأجبان والزبدة",
+    "type": "Food",
+    "count": 88,
+    "image": "/products/food-76.jpeg"
+  },
+  {
+    "id": "sauces",
+    "name": "Sauces & condiments",
+    "ar": "الصلصات والتتبيلات",
+    "type": "Food",
+    "count": 145,
+    "image": "/products/food-92.jpeg"
+  },
+  {
+    "id": "bakery",
+    "name": "Bakery & ingredients",
+    "ar": "المخبوزات ومكوناتها",
+    "type": "Food",
+    "count": 124,
+    "image": "/products/food-82.jpeg"
+  },
+  {
+    "id": "frozen",
+    "name": "Frozen foods & produce",
+    "ar": "الأغذية المجمدة والخضروات",
+    "type": "Food",
+    "count": 49,
+    "image": "/products/food-195.jpeg"
+  },
+  {
+    "id": "beverages",
+    "name": "Beverages & juices",
+    "ar": "المشروبات والعصائر",
+    "type": "Food",
+    "count": 130,
+    "image": ""
+  },
+  {
+    "id": "snacks",
+    "name": "Snacks & confectionery",
+    "ar": "الوجبات الخفيفة والحلويات",
+    "type": "Food",
+    "count": 51,
+    "image": ""
+  },
+  {
+    "id": "nuts",
+    "name": "Nuts, seeds & dried fruit",
+    "ar": "المكسرات والبذور والفواكه المجففة",
+    "type": "Food",
+    "count": 36,
+    "image": ""
+  },
+  {
+    "id": "pantry",
+    "name": "Canned & pantry foods",
+    "ar": "المعلبات والمواد الغذائية",
+    "type": "Food",
+    "count": 231,
+    "image": "/products/food-199.jpeg"
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging & disposables",
+    "ar": "التغليف والمنتجات الاستهلاكية",
+    "type": "Non-Food",
+    "count": 26,
+    "image": ""
+  },
+  {
+    "id": "hygiene",
+    "name": "Cleaning & hygiene",
+    "ar": "التنظيف والعناية بالنظافة",
+    "type": "Non-Food",
+    "count": 14,
+    "image": ""
+  },
+  {
+    "id": "kitchen",
+    "name": "Kitchen & general supplies",
+    "ar": "مستلزمات المطابخ والتوريد العام",
+    "type": "Non-Food",
+    "count": 22,
+    "image": "/products/food-202.jpeg"
+  }
+]
