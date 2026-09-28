@@ -38,6 +38,6 @@ See VERCEL-DEPLOYMENT.md for GitHub, Vercel and environment setup. No custom hos
 
 Confirm company contact details, Arabic copy, product classifications and legal content before public launch. Generated editorial images are illustrative, not verified company facilities.
 
-## Enquiries
+## Contact
 
-`app/api/inquiries/route.ts` validates form submissions. `lib/inquiry-store.ts` forwards them to your configured receiver. This project does not include a database or email provider. The receiver must save or deliver the request before returning success. Missing configuration returns an error to the form instead of a false success message.
+The Contact page displays the company email address and phone number from `lib/company.ts`.

@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/procurement",
     "/quality",
     "/contact",
-    "/request-quote",
     ...categories.map((c) => "/products/" + c.id),
     ...products.map((p) => `/products/${p.category}/${p.slug}`),
   ];

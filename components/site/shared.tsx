@@ -33,13 +33,13 @@ export function CTA({ lang }: { lang: Lang }) {
           <p>
             {tr(
               lang,
-              "Tell us what your business needs. We’ll take it from there.",
-              "أخبرونا بما تحتاجه أعمالكم، ودعوا الباقي لفريقنا.",
+              "Get in touch with our team about your business.",
+              "تواصلوا مع فريقنا بشأن أعمالكم.",
             )}
           </p>
         </div>
-        <Link href={href(lang, "/request-quote")} className="btn">
-          {tr(lang, "Request a quote", "اطلب عرض سعر")}
+        <Link href={href(lang, "/contact")} className="btn">
+          {tr(lang, "Contact us", "تواصل معنا")}
           <Arrow />
         </Link>
       </div>
@@ -163,15 +163,8 @@ export function ProductCard({
             p.usageUnit ||
             tr(lang, "Pack details on request", "تفاصيل العبوة عند الطلب")}
         </p>
-        <Link
-          href={
-            href(lang, "/request-quote") +
-            "?product=" +
-            encodeURIComponent(p.id)
-          }
-          className="textlink"
-        >
-          {tr(lang, "Request quote", "اطلب عرض سعر")}
+        <Link href={href(lang, "/contact")} className="textlink">
+          {tr(lang, "Contact us", "تواصل معنا")}
           <Arrow size={15} />
         </Link>
       </div>
@@ -244,10 +237,10 @@ export function Footer({ lang }: { lang: Lang }) {
               )}
             </Link>
             <Link
-              href={href(lang, "/request-quote")}
+              href={href(lang, "/contact")}
               style={{ color: "#e6eac8", marginTop: 18 }}
             >
-              {tr(lang, "Send your requirements", "أرسل متطلباتك")} ↗
+              {tr(lang, "Contact us", "تواصل معنا")} ↗
             </Link>
           </div>
         </div>

@@ -13,7 +13,6 @@ import {
 } from "@/components/site/pages";
 import { PageHero } from "@/components/site/shared";
 import { Catalogue } from "@/components/site/catalogue";
-import { QuoteForm } from "@/components/site/quote-form";
 type Props = { params: Promise<{ lang: Lang; path?: string[] }> };
 const titles: Record<string, [string, string]> = {
   about: ["About us", "من نحن"],
@@ -25,7 +24,6 @@ const titles: Record<string, [string, string]> = {
   procurement: ["Procurement & supply", "المشتريات والتوريد"],
   quality: ["Quality & compliance", "الجودة والامتثال"],
   contact: ["Contact us", "تواصل معنا"],
-  "request-quote": ["Request a quotation", "اطلب عرض سعر"],
   privacy: ["Privacy notice", "إشعار الخصوصية"],
   terms: ["Website terms", "شروط الموقع"],
   cookies: ["Cookie information", "ملفات الارتباط"],
@@ -112,8 +110,8 @@ export default async function Page({ params }: Props) {
           }
           description={tr(
             lang,
-            "Explore food, FMCG and general supplies. Find what you need, then ask us for a tailored quotation.",
-            "استكشف الأغذية والسلع الاستهلاكية والمستلزمات العامة. اعثر على احتياجاتك واطلب عرض سعر مخصصاً.",
+            "Explore food, FMCG and general supplies. Find what you need, then contact our team for details.",
+            "استكشف الأغذية والسلع الاستهلاكية والمستلزمات العامة. اعثر على احتياجاتك وتواصل مع فريقنا لمعرفة التفاصيل.",
           )}
           section={tr(lang, "Product catalogue", "كتالوج المنتجات")}
         />
@@ -144,16 +142,12 @@ export default async function Page({ params }: Props) {
     return <Information lang={lang} page={page} />;
   if (["privacy", "terms", "cookies"].includes(page))
     return <Legal lang={lang} page={page} />;
-  if (page === "contact" || page === "request-quote")
+  if (page === "contact")
     return (
       <>
         <PageHero
           lang={lang}
-          title={
-            page === "contact"
-              ? tr(lang, "Let’s start a conversation.", "لنبدأ المحادثة.")
-              : tr(lang, "Tell us what you need.", "أخبرنا بما تحتاج.")
-          }
+          title={tr(lang, "Let’s start a conversation.", "لنبدأ المحادثة.")}
           description={tr(
             lang,
             "Share your requirements, quantities and delivery city. Include more than one product to keep your enquiry together.",
@@ -161,12 +155,7 @@ export default async function Page({ params }: Props) {
           )}
           section={tr(lang, "Business enquiry", "استفسار تجاري")}
         />
-        <div className="wrap quote-layout">
-          <Suspense
-            fallback={<p>{tr(lang, "Loading form…", "جارٍ تحميل النموذج…")}</p>}
-          >
-            <QuoteForm lang={lang} />
-          </Suspense>
+        <div className="wrap section">
           <ContactDetails lang={lang} />
         </div>
       </>

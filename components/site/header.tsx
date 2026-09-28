@@ -145,11 +145,6 @@ export function Header({ lang }: { lang: Lang }) {
                     <Link href={href(lang, url)}>{tr(lang, en, ar)}</Link>
                   </SheetClose>
                 ))}
-                <SheetClose asChild>
-                  <Link className="btn" href={href(lang, "/request-quote")}>
-                    {tr(lang, "Request a quote", "اطلب عرض سعر")}
-                  </Link>
-                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
@@ -161,10 +156,6 @@ export function Header({ lang }: { lang: Lang }) {
             }
           >
             {lang === "en" ? "العربية" : "EN"}
-          </Link>
-          <Link href={href(lang, "/request-quote")} className="btn header-cta">
-            {tr(lang, "Request a quote", "اطلب عرض سعر")}
-            <ArrowUpRight size={15} />
           </Link>
         </div>
       </header>

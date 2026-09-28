@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import { Lang, tr, href, company } from "@/lib/company";
 import {
-  categories,
   products,
   brands,
   Product,
@@ -191,8 +190,8 @@ export function Home({ lang }: { lang: Lang }) {
               {tr(lang, "Explore our products", "استكشف منتجاتنا")}
               <Arrow />
             </Link>
-            <Link href={href(lang, "/request-quote")} className="btn secondary">
-              {tr(lang, "Request a quote", "اطلب عرض سعر")}
+            <Link href={href(lang, "/contact")} className="btn secondary">
+              {tr(lang, "Contact us", "تواصل معنا")}
             </Link>
           </div>
           <div className="hero-meta">
@@ -617,16 +616,16 @@ export function ProductDetail({
             <p className="notice">
               {tr(
                 lang,
-                "Specifications, stock, minimum order, origin and delivery terms are confirmed in the quotation. Packaging may vary.",
-                "يتم تأكيد المواصفات والمخزون والحد الأدنى للطلب والمنشأ وشروط التسليم في عرض السعر. قد تختلف العبوة.",
+                "Availability, minimum order, origin and delivery terms are confirmed by our team. Packaging may vary.",
+                "يؤكد فريقنا توفر المنتجات والحد الأدنى للطلب والمنشأ وشروط التسليم. قد تختلف العبوة.",
               )}
             </p>
             <div className="actions">
               <Link
                 className="btn"
-                href={href(lang, "/request-quote") + "?product=" + p.id}
+                href={href(lang, "/contact")}
               >
-                {tr(lang, "Request this product", "اطلب هذا المنتج")}
+                {tr(lang, "Contact us about this product", "تواصل معنا حول هذا المنتج")}
                 <Arrow />
               </Link>
               <Link className="btn secondary" href={href(lang, "/products")}>
@@ -790,11 +789,11 @@ export function Information({ lang, page }: { lang: Lang; page: string }) {
                 <h3>{tr(lang, i.en, i.ar)}</h3>
                 <p>{tr(lang, i.desc, i.arDesc)}</p>
                 <Link
-                  href={href(lang, "/request-quote")}
+                  href={href(lang, "/contact")}
                   className="textlink"
                   style={{ marginTop: 20 }}
                 >
-                  {tr(lang, "Discuss your requirements", "ناقش احتياجاتك")}
+                  {tr(lang, "Contact us", "تواصل معنا")}
                   <Arrow />
                 </Link>
               </article>
@@ -928,8 +927,8 @@ export function ContactDetails({ lang }: { lang: Lang }) {
       <p>
         {tr(
           lang,
-          "Prefer to share your list directly? Email the product names, quantities and delivery city.",
-          "تفضل مشاركة قائمتك مباشرة؟ أرسل أسماء المنتجات والكميات ومدينة التسليم عبر البريد الإلكتروني.",
+          "For general business enquiries, contact us by email or phone.",
+          "للاستفسارات التجارية العامة، تواصل معنا عبر البريد الإلكتروني أو الهاتف.",
         )}
       </p>
       <div className="contact-line">
@@ -1002,8 +1001,8 @@ export function Legal({ lang, page }: { lang: Lang; page: string }) {
             <p>
               {tr(
                 lang,
-                "When you submit an enquiry, the website records the contact and company details, product requirements and message you provide. These details are used to review and respond to your business request. Do not include sensitive personal information.",
-                "عند إرسال استفسار، يسجل الموقع بيانات الاتصال والشركة ومتطلبات المنتجات والرسالة المقدمة. تُستخدم هذه التفاصيل لمراجعة طلبك التجاري والرد عليه. يرجى عدم تضمين معلومات شخصية حساسة.",
+                "If you contact us by email or phone, information you share is handled by your communication provider and our team so we can respond. Do not include sensitive personal information.",
+                "إذا تواصلت معنا عبر البريد الإلكتروني أو الهاتف، فسيتعامل مزود خدمة الاتصال وفريقنا مع المعلومات التي تشاركها للرد عليك. يرجى عدم تضمين معلومات شخصية حساسة.",
               )}
             </p>
             <h2>{tr(lang, "Questions about your data", "أسئلة عن بياناتك")}</h2>
@@ -1022,13 +1021,13 @@ export function Legal({ lang, page }: { lang: Lang; page: string }) {
         ) : page === "terms" ? (
           <>
             <h2>
-              {tr(lang, "Catalogue and quotations", "الكتالوج وعروض الأسعار")}
+              {tr(lang, "Catalogue and availability", "الكتالوج والتوفر")}
             </h2>
             <p>
               {tr(
                 lang,
-                "The catalogue is informational. Listings do not guarantee stock, price, pack format, origin or delivery availability. All commercial terms must be confirmed in a separate quotation and accepted order. Product images are indicative and packaging may change.",
-                "الكتالوج لأغراض المعلومات. لا تضمن القوائم المخزون أو السعر أو شكل العبوة أو المنشأ أو توفر التسليم. يجب تأكيد جميع الشروط التجارية في عرض سعر وطلب مقبول منفصل. صور المنتجات توضيحية وقد تتغير العبوات.",
+                "The catalogue is informational. Listings do not guarantee stock, price, pack format, origin or delivery availability. Confirm all commercial terms with the company before ordering. Product images are indicative and packaging may change.",
+                "الكتالوج لأغراض المعلومات. لا تضمن القوائم المخزون أو السعر أو شكل العبوة أو المنشأ أو توفر التسليم. يرجى تأكيد جميع الشروط التجارية مع الشركة قبل الطلب. صور المنتجات توضيحية وقد تتغير العبوات.",
               )}
             </p>
             <h2>{tr(lang, "Names and imagery", "الأسماء والصور")}</h2>
