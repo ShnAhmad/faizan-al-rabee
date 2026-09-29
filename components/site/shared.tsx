@@ -205,7 +205,7 @@ export function Footer({ lang }: { lang: Lang }) {
               ["clients", "Client relationships", "علاقات العملاء"],
               ["quality", "Quality & compliance", "الجودة والامتثال"],
             ].map(([url, en, ar]) => (
-              <Link href={href(lang, "/" + url)} key={url}>
+              <Link href={href(lang)} key={url}>
                 {tr(lang, en, ar)}
               </Link>
             ))}
@@ -218,7 +218,7 @@ export function Footer({ lang }: { lang: Lang }) {
               ["industries", "Industries we serve", "القطاعات التي نخدمها"],
               ["procurement", "Procurement & supply", "المشتريات والتوريد"],
             ].map(([url, en, ar]) => (
-              <Link href={href(lang, "/" + url)} key={url}>
+              <Link href={href(lang)} key={url}>
                 {tr(lang, en, ar)}
               </Link>
             ))}
@@ -229,7 +229,7 @@ export function Footer({ lang }: { lang: Lang }) {
             <a href={"tel:" + company.phone} dir="ltr">
               {company.displayPhone}
             </a>
-            <Link href={href(lang, "/contact")}>
+            <Link href={href(lang)}>
               {tr(
                 lang,
                 "Riyadh, Saudi Arabia",
@@ -237,7 +237,7 @@ export function Footer({ lang }: { lang: Lang }) {
               )}
             </Link>
             <Link
-              href={href(lang, "/contact")}
+              href={href(lang)}
               style={{ color: "#e6eac8", marginTop: 18 }}
             >
               {tr(lang, "Contact us", "تواصل معنا")} ↗
@@ -254,13 +254,13 @@ export function Footer({ lang }: { lang: Lang }) {
             )}
           </span>
           <div>
-            <Link href={href(lang, "/privacy")}>
+            <Link href={href(lang)}>
               {tr(lang, "Privacy", "الخصوصية")}
             </Link>
-            <Link href={href(lang, "/terms")}>
+            <Link href={href(lang)}>
               {tr(lang, "Terms", "الشروط")}
             </Link>
-            <Link href={href(lang, "/cookies")}>
+            <Link href={href(lang)}>
               {tr(lang, "Cookies", "ملفات الارتباط")}
             </Link>
           </div>
