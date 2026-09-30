@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -11,7 +11,6 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { company, Lang, tr, href } from "@/lib/company";
-import categories from "@/data/categories.json";
 export function Brand({ lang }: { lang: Lang }) {
   return (
     <Link href={href(lang)} className="brand" aria-label={company.name}>
@@ -61,69 +60,15 @@ export function Header({ lang }: { lang: Lang }) {
             aria-label={tr(lang, "Main navigation", "القائمة الرئيسية")}
             className="desktop-nav"
           >
-            {nav.map(([url, en, ar]) =>
-              url === "/products" ? (
-                <details className="nav-products" key={url}>
-                  <summary>
-                    {tr(lang, en, ar)}
-                    <ChevronDown size={13} />
-                  </summary>
-                  <div className="mega">
-                    <div>
-                      <h3>
-                        {tr(
-                          lang,
-                          "A broader supply portfolio.",
-                          "مجموعة أوسع من المنتجات.",
-                        )}
-                      </h3>
-                      <p style={{ marginTop: 12 }}>
-                        {tr(
-                          lang,
-                          "Everyday essentials. Business-scale supply.",
-                          "الاحتياجات اليومية بكميات تناسب الأعمال.",
-                        )}
-                      </p>
-                      <Link
-                        href={href(lang, "/products")}
-                        onClick={(e) =>
-                          e.currentTarget
-                            .closest("details")
-                            ?.removeAttribute("open")
-                        }
-                        className="textlink"
-                      >
-                        {tr(lang, "Browse all products", "تصفح جميع المنتجات")}
-                        <ArrowUpRight size={16} />
-                      </Link>
-                    </div>
-                    <div className="mega-links">
-                      {categories.map((c) => (
-                        <Link
-                          key={c.id}
-                          href={href(lang, "/products/" + c.id)}
-                          onClick={(e) =>
-                            e.currentTarget
-                              .closest("details")
-                              ?.removeAttribute("open")
-                          }
-                        >
-                          {lang === "ar" ? c.ar : c.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </details>
-              ) : (
-                <Link
-                  className={path === href(lang, url) ? "active" : ""}
-                  href={href(lang, url)}
-                  key={url}
-                >
-                  {tr(lang, en, ar)}
-                </Link>
-              ),
-            )}
+            {nav.map(([url, en, ar]) => (
+              <Link
+                className={!url && path === href(lang) ? "active" : ""}
+                href={href(lang)}
+                key={url}
+              >
+                {tr(lang, en, ar)}
+              </Link>
+            ))}
           </nav>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -142,7 +87,7 @@ export function Header({ lang }: { lang: Lang }) {
               <div className="sheet-links">
                 {nav.map(([url, en, ar]) => (
                   <SheetClose asChild key={url}>
-                    <Link href={href(lang, url)}>{tr(lang, en, ar)}</Link>
+                    <Link href={href(lang)}>{tr(lang, en, ar)}</Link>
                   </SheetClose>
                 ))}
               </div>
@@ -150,7 +95,7 @@ export function Header({ lang }: { lang: Lang }) {
           </Sheet>
           <Link
             className="language"
-            href={path.replace(/^\/(en|ar)/, lang === "en" ? "/ar" : "/en")}
+            href={lang === "en" ? "/ar" : "/en"}
             aria-label={
               lang === "en" ? "Switch to Arabic" : "Switch to English"
             }
