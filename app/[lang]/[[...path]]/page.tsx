@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Lang, tr, company } from "@/lib/company";
 import { products, getCategory } from "@/lib/catalog";
@@ -58,7 +58,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function Page({ params }: Props) {
   const { lang, path = [] } = await params;
-  if (path.length) redirect(`/${lang}`);
   const [page, cat, slug] = path;
   if (path.length > 3) notFound();
   if (!page)
